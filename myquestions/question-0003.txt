@@ -1,0 +1,22 @@
+Problema 3:
+
+Recibes un DataFrame de pandas con los registros de temperatura de una máquina industrial en la columna 'temperatura'. Los datos en crudo tienen mucho "ruido" por fluctuaciones menores. Necesitas suavizar la curva de datos y luego aplicar un detector espacial para identificar comportamientos verdaderamente anómalos (posibles fallos). Además, el equipo de ingeniería necesita un reporte estructurado que incluya validaciones de seguridad para evitar errores si la ventana de tiempo elegida es más grande que los datos disponibles.
+
+Tu Misión:
+Escribe una función llamada detectar_fallos_maquinaria(df, tamano_ventana, tasa_contaminacion) que realice lo siguiente:
+
+* Verifique si el tamano_ventana es mayor que la longitud total del DataFrame. Si es así, debe lanzar un error utilizando raise ValueError("La ventana es mayor que los datos disponibles").
+
+* Utilice las funciones de pandas para calcular la media móvil (rolling mean) de la columna 'temperatura' utilizando el tamano_ventana proporcionado y elimine las filas con valores nulos (NaN) resultantes.
+
+* Extraiga los datos suavizados y conviértalos en un arreglo de numpy de dos dimensiones utilizando .reshape(-1, 1).
+
+* Instancie y entrene un modelo IsolationForest (de sklearn.ensemble) pasándole el argumento contamination=tasa_contaminacion y random_state=42. Luego, genere las predicciones sobre la matriz suavizada.
+
+* Utilice operaciones de numpy para calcular dos métricas a partir de las predicciones (donde -1 indica anomalía):
+
+* El conteo total exacto de anomalías detectadas.
+
+* La tasa real de anomalías (calculada como el número de anomalías dividido entre el total de filas válidas analizadas).
+
+* Devuelva un diccionario con la siguiente estructura exacta: {"total_anomalias": conteo_entero, "tasa_real_anomalias": tasa_flotante}.
