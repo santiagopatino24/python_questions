@@ -1,0 +1,14 @@
+Problema 2:
+
+El equipo de marketing quiere analizar el tiempo que pasan los usuarios en la aplicación, pero no quieren ver edades exactas (ej. 23, 45, 61), sino analizar por rangos generacionales. Además, solo les interesa el comportamiento de los usuarios que han estado activos recientemente.
+
+Tu Misión:
+Escribe una función llamada agrupar_generaciones(df) (donde df tiene las columnas edad, dias_inactivo y tiempo_en_app) que realice lo siguiente:
+
+* Filtre el DataFrame para conservar exclusivamente a los usuarios donde la columna dias_inactivo sea menor o igual a 30.
+
+* Utilice la función pd.cut de Pandas para crear una nueva columna llamada rango_edad a partir de la columna edad, usando los siguientes límites exactos (bins): [0, 18, 35, 60, 100] y las etiquetas ['Menor', 'Joven', 'Adulto', 'Mayor'].
+
+* Agrupe los datos filtrados por la nueva columna rango_edad y calcule el promedio de la columna tiempo_en_app.
+
+* Extraiga esos promedios resultantes y devuélvalos como un arreglo unidimensional de numpy.
