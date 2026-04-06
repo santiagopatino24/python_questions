@@ -1,0 +1,14 @@
+Problema 4:
+
+Has entrenado un modelo para detectar una enfermedad muy rara. Evaluar la precisión (accuracy) es un error, ya que decir "nadie está enfermo" daría un 99% de acierto. Necesitas evaluar el modelo midiendo su capacidad para separar clases (ROC AUC) y además quieres saber matemáticamente cuántos pacientes fueron diagnosticados con un nivel de confianza clínica muy alto.
+
+Tu Misión:
+Escribe una función llamada evaluar_probabilidades(y_true, y_pred_proba) que reciba el vector de etiquetas reales (y_true) y un arreglo con las probabilidades predichas para la clase positiva (y_pred_proba). La función debe:
+
+* Calcular el Área Bajo la Curva ROC utilizando la función roc_auc_score de sklearn.metrics.
+
+* Utilizar operaciones lógicas con arreglos de numpy para crear una máscara booleana que filtre e identifique cuántos valores en y_pred_proba son estrictamente mayores a 0.85 (es decir, predicciones con alta confianza).
+
+* Contar el número de predicciones que cumplieron la condición anterior.
+
+* Devuelva una tupla con dos valores: el resultado del AUC (un float) y el conteo de predicciones de alta confianza (un int).
