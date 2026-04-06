@@ -1,8 +1,8 @@
-**Problema 1:**
+Problema 1:
 
 En el mundo real, los datos rara vez vienen en una sola tabla. Tienes dos DataFrames separados: uno con el registro histórico de ventas (con las columnas id_producto y cantidad_vendida) y otro con el catalogo de la empresa (con id_producto, precio_unitario y categoria_producto). Tu líder necesita saber qué categorías generan más dinero, pero primero debes cruzar la información.
 
-**Tu Misión:**
+Tu Misión:
 Escribe una función llamada ingresos_por_categoria(df_ventas, df_catalogo) que realice lo siguiente:
 
 * Fusione (merge) ambos DataFrames utilizando la columna id_producto mediante un inner join.
