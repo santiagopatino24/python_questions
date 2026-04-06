@@ -1,0 +1,16 @@
+**Problema 1:**
+
+En el mundo real, los datos rara vez vienen en una sola tabla. Tienes dos DataFrames separados: uno con el registro histórico de ventas (con las columnas id_producto y cantidad_vendida) y otro con el catalogo de la empresa (con id_producto, precio_unitario y categoria_producto). Tu líder necesita saber qué categorías generan más dinero, pero primero debes cruzar la información.
+
+**Tu Misión:**
+Escribe una función llamada ingresos_por_categoria(df_ventas, df_catalogo) que realice lo siguiente:
+
+* Fusione (merge) ambos DataFrames utilizando la columna id_producto mediante un inner join.
+
+* Cree una nueva columna llamada ingreso_total calculada como la multiplicación de cantidad_vendida por precio_unitario.
+
+* Agrupe el DataFrame resultante por la columna categoria_producto y calcule la suma del ingreso_total para cada categoría.
+
+* Ordene los resultados de mayor a menor ingreso.
+
+* Devuelva los valores de los ingresos calculados como un arreglo de numpy (descartando los nombres de las categorías).
